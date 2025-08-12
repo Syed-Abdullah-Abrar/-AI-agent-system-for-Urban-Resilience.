@@ -17,7 +17,7 @@ from IPython.display import Image, display
 
 parameters = {
     "decoding_method": "greedy",
-    "max_new_tokens": 800,
+    "max_new_tokens": 500,
     "repetition_penalty": 1,
     "min_new_tokens":1
 }

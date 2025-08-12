@@ -55,11 +55,10 @@ def chatbot(state: qna_state):
     return {"messages": [llm_with_tools.invoke(state["messages"])]}
 
 
-tool_node = ToolNode(tools)
 
 
 graph_builder.add_node("chatbot", chatbot)
-graph_builder.add_node("tools", tool_node)
+graph_builder.add_node("tools", ToolNode(tools))
 graph_builder.add_edge(START, "chatbot")
 graph_builder.add_conditional_edges("chatbot",tools_condition)
 graph_builder.add_edge("tools", "chatbot")
